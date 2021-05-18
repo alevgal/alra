@@ -1,0 +1,21 @@
+.section-map__first {
+
+  &::before {
+    content: "";
+    border-bottom: 3px solid $light-blue;
+    width: 172px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.section-map__list {
+  font-size: rem-calc(16);
+}
+
+.section-map__title {
+  font-size: rem-calc(38);
+  line-height: 1.26;
+}

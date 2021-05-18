@@ -1,0 +1,33 @@
+.social-links-menu {
+  .content-info & {
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: rem-calc(22);
+
+    li {
+      margin: 0 8px;
+    }
+
+    a {
+      color: $white;
+    }
+  }
+
+  .nav-primary & {
+    font-size: rem-calc(18);
+    margin: 75px 0 28px;
+
+    a {
+      color: #000;
+    }
+
+    li {
+      margin: 0 8px;
+    }
+
+    @include media-breakpoint-up(menu-switch) {
+      display: none !important;
+    }
+  }
+
+}

@@ -1,0 +1,158 @@
+/* purgecss start ignore */
+
+.banner {
+  z-index: 10;
+}
+
+.brand {
+  width: 120px;
+
+  @include media-breakpoint-up(menu-switch) {
+    width: 132px;
+    margin-right: 68px;
+  }
+}
+
+.nav-menu {
+  display: flex;
+  margin-bottom: 0;
+
+  @include media-breakpoint-down(menu-switch) {
+    flex-direction: column;
+  }
+
+  li {
+
+    a {
+      display: block;
+      text-decoration: none;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-weight: $font-weight-medium;
+    }
+
+    @include media-breakpoint-down(menu-switch) {
+      margin-bottom: 9px;
+
+      a {
+        color: #000;
+        font-size: rem-calc(24);
+      }
+    }
+
+    @include media-breakpoint-up(menu-switch) {
+      a {
+        color: $white;
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+    }
+  }
+
+
+  .login-button {
+    a {
+      color: $white;
+      background-color: $light-blue;
+    }
+
+    @include media-breakpoint-down(menu-switch) {
+      margin-top: 11px;
+
+      a {
+        font-size: rem-calc(22);
+        display: inline-block;
+        border-radius: 23px;
+        padding-left: 26px;
+        padding-right: 26px;
+      }
+    }
+
+    @include media-breakpoint-up(menu-switch) {
+      a {
+        border-radius: 18px;
+        padding: 6px 20px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(menu-switch) {
+    flex-direction: row;
+    align-items: center;
+
+    &:not(.signin-menu) {
+      justify-content: center;
+      width: calc(100% - 200px);
+    }
+  }
+}
+
+.signin-menu {
+  @include media-breakpoint-up(menu-switch) {
+    width: 200px;
+    justify-content: flex-end;
+  }
+}
+
+.nav-primary {
+  @include media-breakpoint-down(menu-switch) {
+    position: fixed;
+    z-index: $zindex-menu;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f2f3f4;
+    overflow: auto;
+    display: none;
+
+    .menu-open & {
+      display: flex;
+    }
+
+    > * {
+      padding-left: 61px;
+      padding-right: 41px;
+    }
+  }
+
+  @include media-breakpoint-up(menu-switch) {
+    width: calc(100% - 200px);
+  }
+}
+
+.menu-open {
+  @include media-breakpoint-down(menu-switch) {
+    overflow: hidden;
+  }
+}
+
+.nav-primary__header {
+  padding-top: 87px;
+  padding-bottom: 37px;
+}
+
+.nav-primary__logo {
+  width: 206px;
+  max-width: 100%;
+}
+
+#menu-close {
+  padding: 15px;
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #000;
+}
+
+.nav-primary__copy {
+  color: #707070;
+  margin-bottom: 82px;
+
+  a {
+    color: inherit;
+  }
+}
+
+/* purgecss end ignore */

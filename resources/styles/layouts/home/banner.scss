@@ -1,0 +1,129 @@
+.home-banner {
+  height: rem-calc(836);
+  z-index: 1;
+  margin-top: rem-calc(-132);
+
+  @include media-breakpoint-up(lg) {
+    height: rem-calc(764);
+  }
+
+  //.curved {
+  //  z-index: 20;
+  //  width: 100%;
+  //  height: rem-calc(40);
+  //  bottom: rem-calc(-20);
+  //}
+
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    content: "";
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.33) 54%, rgba(0, 0, 0, 0.49));
+    z-index: 20;
+    opacity: 0.65;
+  }
+}
+
+.home-banner__video {
+  height: 120%;
+  width: auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-50%);
+
+  @include media-breakpoint-up(lg) {
+    height: 100%;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    width: 100%;
+    height: auto;
+    bottom: 50%;
+    transform: translateX(-50%) translateY(50%);
+  }
+}
+
+.home-banner__list-item {
+  padding: 0 14px;
+  position: relative;
+  line-height: 1.28;
+  margin-bottom: 10px;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border-left: 1px solid rgba($gun-metal, 0.7);
+    content: "";
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(xs2) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+
+    @include media-breakpoint-up(xs2) {
+      font-size: 18px;
+    }
+  }
+
+  &.active a,
+  a:hover {
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      right: 0;
+      bottom: -7px;
+      border-bottom: 3px solid $light-blue;
+    }
+  }
+}
+
+.home-banner__text {
+  z-index: 20;
+}
+
+.home-banner__title {
+  font-size: rem-calc(38);
+  line-height: 1.29;
+  max-width: 380px;
+
+  @include media-breakpoint-up(lg) {
+    font-size: rem-calc(46);
+    line-height: 1.33;
+    max-width: 500px;
+  }
+}

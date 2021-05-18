@@ -1,0 +1,12 @@
+.logo {
+  position: relative;
+  display: block;
+  background: url("../images/logo.png") 50% 50% no-repeat;
+  background-size: contain;
+
+  &::before {
+    content: "";
+    padding-top: percentage( 35 / 120 );
+    display: block;
+  }
+}

@@ -1,0 +1,36 @@
+.beveled-bottom {
+  clip-path: polygon(0% 0%, 100% 0, 100% calc(100% - 20px), 0% calc(100% - 30px));
+
+  @include media-breakpoint-up(menu-switch) {
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% calc(100% - 40px));
+  }
+}
+
+.beveled-top {
+  clip-path: polygon(0% 10px, 100% 20px, 100% 100%, 0% 100%);
+
+  @include media-breakpoint-up(menu-switch) {
+    clip-path: polygon(0% 0, 100% 40px, 100% 100%, 0% 100%);
+  }
+}
+
+//.curved {
+//  svg {
+//    width: 100%;
+//    height: 100%;
+//  }
+//}
+//
+//@supports (clip-path: polygon(0% 25%,  100% 50%, 100% 100%,  0% 100%)) {
+//  .curved {
+//    clip-path: polygon(0% 25%,  100% 50%, 100% 100%,  0% 100%);
+//
+//    &.text-white {
+//      background-color: $white;
+//    }
+//
+//    svg {
+//      display: none;
+//    }
+//  }
+//}

@@ -1,0 +1,49 @@
+.content-info {
+  padding-top: rem-calc(165);
+  padding-bottom: rem-calc(100);
+  position: relative;
+  background: linear-gradient(to bottom, rgba(#394651, 0.6), rgba(#0b0e10, 0.6)),
+              url('../images/bottom_banner.jpg') 50% 50% no-repeat;
+  background-size: 100% 100%, auto 100%;
+  background-blend-mode: normal;
+
+  > * {
+    position: relative;
+    z-index: 10;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-size: 100% 100%, cover;
+    padding-top: rem-calc(242);
+    padding-bottom: rem-calc(168);
+  }
+}
+
+.content-info__logo {
+  width: rem-calc(270);
+
+  @include media-breakpoint-up(lg) {
+    width: rem-calc(338);
+  }
+}
+
+.content-info__nav {
+  a {
+    color: $white;
+    text-decoration: none;
+    display: block;
+    padding: 1px 16px;
+  }
+}
