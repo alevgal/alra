@@ -1,0 +1,198 @@
+/* purgecss start ignore */
+
+.main {
+  > .job_listings {
+    padding-bottom: rem-calc(70);
+
+    @include media-breakpoint-up(lg) {
+      padding-bottom: rem-calc(145);
+    }
+  }
+}
+
+.job_listing {
+  padding-bottom: rem-calc(26);
+  margin-bottom: rem-calc(25);
+  border-bottom: 1px solid #dfdfdf;
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: 0;
+    margin-bottom: rem-calc(55);
+  }
+}
+
+
+.job_listings-wrap {
+  max-width: 1020px;
+}
+
+.job-box__header-left {
+  @include media-breakpoint-up(lg) {
+    width: calc(100% - 200px);
+  }
+}
+
+.job-box__header-right {
+  @include media-breakpoint-up(lg) {
+    width: 200px;
+    padding-left: 50px;
+  }
+}
+
+.job-box__company-logo {
+  width: 100px;
+  padding-right: 28px;
+
+  .company_logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+  }
+}
+
+.job-box__meta-item {
+  line-height: rem-calc(23);
+  position: relative;
+  padding-left: rem-calc(35);
+}
+
+.job-box__icon {
+
+  &.icon-portfolio,
+  &.icon-pin,
+  &.icon-coin {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &::before {
+      width: rem-calc(23);
+      position: relative;
+      top: -1px;
+    }
+  }
+
+  &.icon-portfolio {
+    font-size: rem-calc(18);
+  }
+
+  &.icon-pin {
+    font-size: rem-calc(21);
+  }
+
+  &.icon-coin {
+    font-size: rem-calc(23);
+  }
+
+  &.icon-calendar-solid {
+    font-size: rem-calc(13.5);
+    margin-right: rem-calc(8);
+  }
+
+}
+
+.job-box__content {
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    width: calc(100% - 100px);
+  }
+}
+
+.position__title {
+  font-size: rem-calc(26);
+}
+
+.job-box__types {
+
+  .job-type {
+    padding-right: rem-calc(11);
+    margin-right: rem-calc(11);
+    margin-bottom: rem-calc(11);
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 0.75em;
+      border-right: 1px solid;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-right: rem-calc(13);
+      margin-right: rem-calc(13);
+
+      &:first-child {
+        padding-left: rem-calc(13);
+        margin-left: rem-calc(13);
+
+        &::before {
+          content: "";
+          height: 0.75em;
+          border-left: 1px solid;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+
+.job-box__agents {
+  display: none;
+
+  .job-box-expanded & {
+    display: flex;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem-calc(30);
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: rem-calc(50);
+    }
+  }
+}
+
+.job-box__agent {
+  padding-bottom: rem-calc(30);
+}
+
+.job-buttons {
+  display: none;
+
+  .job-box-expanded & {
+    display: flex;
+  }
+
+  .btn {
+    padding: rem-calc(4.5) rem-calc(31);
+  }
+}
+
+.agent-buttons {
+  .btn {
+    padding: rem-calc(4.5);
+
+    @include media-breakpoint-up(lg) {
+      width: calc(50% - 6px);
+    }
+  }
+}
+
+/* purgecss end ignore */

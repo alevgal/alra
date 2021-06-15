@@ -1,18 +1,13 @@
+/* purgecss start ignore */
+
 .home-banner {
   height: rem-calc(836);
   z-index: 1;
-  margin-top: rem-calc(-132);
+  margin-top: rem-calc(-$header-height);
 
   @include media-breakpoint-up(lg) {
     height: rem-calc(764);
   }
-
-  //.curved {
-  //  z-index: 20;
-  //  width: 100%;
-  //  height: rem-calc(40);
-  //  bottom: rem-calc(-20);
-  //}
 
   &::before {
     position: absolute;
@@ -94,20 +89,19 @@
     display: inline-block;
     position: relative;
 
+    .home-bottom__nav & {
+      font-weight: 900;
+    }
+
     @include media-breakpoint-up(xs2) {
       font-size: 18px;
     }
-  }
 
-  &.active a,
-  a:hover {
-    &::before {
-      position: absolute;
-      content: "";
-      left: 0;
-      right: 0;
-      bottom: -7px;
-      border-bottom: 3px solid $light-blue;
+    @include media-breakpoint-up(lg) {
+
+      .home-bottom__nav & {
+        font-size: rem-calc(22);
+      }
     }
   }
 }
@@ -127,3 +121,5 @@
     max-width: 500px;
   }
 }
+
+/* purgecss end ignore */

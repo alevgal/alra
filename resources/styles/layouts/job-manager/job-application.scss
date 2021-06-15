@@ -1,0 +1,17 @@
+/* purgecss start ignore */
+
+.job-manager-applications-applied-notice,
+.job-manager-message {
+  position: relative;
+  padding: $alert-padding-y $alert-padding-x;
+  margin-bottom: rem-calc(25);
+  border: $alert-border-width solid transparent;
+  @include border-radius($alert-border-radius);
+  @include alert-variant(
+      shift-color($info, $alert-bg-scale),
+      shift-color($info, $alert-border-scale),
+      shift-color($info, $alert-color-scale)
+  );
+}
+
+/* purgecss end ignore */

@@ -41,6 +41,8 @@
   },
   "dependencies": {
     "bootstrap": "^5.0.0-beta3",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "select2": "^4.1.0-rc.0",
+    "swiper": "^6.6.1"
   }
 }

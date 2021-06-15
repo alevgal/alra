@@ -14,7 +14,7 @@
 
     @include('partials.social-menu')
 
-    <p class="copy text-center text-white opacity-4 fs-7 fw-medium mb-0">
+    <p class="copy text-center text-white opacity-40 fs-7 fw-medium mb-0">
       &copy; {{ date('Y') }} All rights reserved. <a class="text-white text-decoration-none" href="{!! home_url('/') !!}">{!! get_bloginfo('name') !!} {!! get_bloginfo('description') !!} </a>
     </p>
   </div>

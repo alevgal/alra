@@ -1,7 +1,7 @@
 .logo {
   position: relative;
   display: block;
-  background: url("../images/logo.png") 50% 50% no-repeat;
+  background: url("../images/logo.png") 0 50% no-repeat;
   background-size: contain;
 
   &::before {
@@ -9,4 +9,8 @@
     padding-top: percentage( 35 / 120 );
     display: block;
   }
+}
+
+.logo-dark {
+  background-image: url("../images/logo-reverse.png");
 }

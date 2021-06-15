@@ -1,0 +1,28 @@
+/* purgecss start ignore */
+
+.home-bottom {
+  min-height: 730px;
+  background: url("../images/sub-footer-bg.jpg") 30% 50% no-repeat $gun-metal;
+
+  @include media-breakpoint-up( lg ) {
+    min-height: 777px;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+}
+
+.home-bottom__title {
+  font-weight: 900;
+  font-size: rem-calc(48);
+  line-height: 1;
+
+  @include media-breakpoint-down( lg ) {
+    max-width: 385px;
+  }
+
+  @include media-breakpoint-up( lg ) {
+    font-size: rem-calc(60);
+  }
+}
+
+/* purgecss end ignore */

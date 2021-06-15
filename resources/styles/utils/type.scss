@@ -1,0 +1,13 @@
+.fs-32-46 {
+  font-size: rem-calc(32);
+
+  @include media-breakpoint-up(lg) {
+    font-size: rem-calc(46);
+  }
+}
+
+.sub-title {
+  @include media-breakpoint-down(md) {
+    max-width: rem-calc(230);
+  }
+}

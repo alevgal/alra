@@ -156,7 +156,8 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\ThemeServiceProvider::class,
+        App\Providers\AgentsServiceProvider::class,
+        App\Providers\WPJobManagerServiceProvider::class,
 
     ],
 

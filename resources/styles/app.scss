@@ -4,6 +4,7 @@
 @import "common/variables";
 @import "bootstrap-api";
 @import "~bootstrap/scss/bootstrap";
+@import "~swiper/swiper";
 
 @import 'common/global';
 @import 'common/fonts';
@@ -12,8 +13,16 @@
 @import "components/curved";
 @import "components/logo";
 @import "components/social-links";
+@import "components/line-link";
+@import "components/sliders";
+@import "components/select2";
+@import "components/agents";
+@import "components/forms";
 @import "layouts/header";
 @import "layouts/footer";
+@import "layouts/agents";
 @import "layouts/home";
-@import "layouts/sections/map";
+@import "layouts/sections/sections";
+@import "layouts/contact";
+@import "layouts/job-manager";
 @import "utils/utils";

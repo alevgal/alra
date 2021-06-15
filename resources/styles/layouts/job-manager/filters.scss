@@ -1,0 +1,36 @@
+/* purgecss start ignore */
+.job-filters {
+  margin-top: rem-calc(-$header-height);
+  z-index: 1;
+  padding-top: rem-calc(217);
+  padding-bottom: rem-calc(150);
+
+  @include media-breakpoint-up(lg) {
+    padding-top: rem-calc(310);
+    padding-bottom: rem-calc(270);
+  }
+}
+
+.job-filters__title {
+  font-size: rem-calc(38);
+
+  @include media-breakpoint-up(lg) {
+    font-size: rem-calc(46);
+  }
+}
+
+.showing_jobs {
+  text-align: center;
+}
+
+.search_jobs {
+  > .filter-group {
+    @include media-breakpoint-up(lg) {
+      width: rem-calc(200);
+      flex-basis: rem-calc(200);
+      padding-left: rem-calc(20);
+      padding-right: rem-calc(20);
+    }
+  }
+}
+/* purgecss end ignore */

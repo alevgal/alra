@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 .btn-default {
   display: inline-block;
   margin: 0;
@@ -21,3 +22,81 @@
     color: $light-blue;
   }
 }
+
+.btn-transparent {
+  border-color: $white;
+  color: $white;
+
+  &:hover {
+    background-color: $white;
+    color: $body-color;
+  }
+}
+
+.load_more_jobs {
+  display: block;
+  max-width: 240px;
+  margin: 0 auto;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  color: $body-color;
+  text-align: center;
+  text-decoration: if($link-decoration == none, null, none);
+  white-space: $btn-white-space;
+  vertical-align: middle;
+  cursor: if($enable-button-pointers, pointer, null);
+  user-select: none;
+  background-color: transparent;
+  border: $btn-border-width solid transparent;
+  @include transition($btn-transition);
+  padding: rem-calc(4.5) $btn-padding-x;
+  border-radius: $btn-border-radius;
+  font-size: $btn-font-size;
+
+  strong {
+    font-weight: $font-weight-medium;
+  }
+
+  &:hover {
+    text-decoration: if($link-hover-decoration == underline, none, null);
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    pointer-events: none;
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+}
+
+.load_more_jobs,
+.btn-white {
+  background-color: $white;
+  color: #000;
+  border-color: $gun-metal;
+
+  &:hover {
+    background-color: $gun-metal;
+    color: $white;
+  }
+}
+
+.btn-dark {
+  background-color: $gun-metal;
+  border-color: $gun-metal;
+  color: $white;
+
+  &:hover {
+    background-color: $white;
+    color: $gun-metal;
+  }
+}
+
+/* purgecss end ignore */

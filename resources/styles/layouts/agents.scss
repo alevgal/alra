@@ -1,0 +1,17 @@
+.agents-bottom-text {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    font-size: 192px;
+    color: rgba(255,255,255,0.1);
+    top: 55px;
+    left: 0;
+
+    @include media-breakpoint-up(lg) {
+      left: -200px;
+    }
+  }
+}

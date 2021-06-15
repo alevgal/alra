@@ -1,0 +1,80 @@
+.form-control {
+
+  &,
+  &:focus {
+    border-color: transparent transparent $input-border-color transparent;
+  }
+
+  &.contact-textarea {
+    min-height: rem-calc(80);
+  }
+}
+
+.form-control-light {
+  color: $white;
+  background-color: transparent;
+  border-color: transparent transparent rgba(255, 255, 255, 0.28) transparent;
+
+  &::placeholder {
+    color: $white;
+  }
+
+  &:focus {
+    color: $white;
+    background-color: transparent;
+  }
+}
+
+.checkbox-advanced {
+  position: relative;
+
+  label {
+    padding-left: rem-calc(30px);
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: inline-block;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: rem-calc(20);
+      width: rem-calc(20);
+    }
+
+    &::before {
+      content: "";
+      border: 1px solid $white;
+    }
+
+    &::after {
+      font-family: "alra";
+      font-style: normal;
+      font-weight: normal;
+      speak: never;
+      text-decoration: inherit;
+      text-align: center;
+      font-variant: normal;
+      text-transform: none;
+      line-height: rem-calc(20);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+
+  input[type="checkbox"] {
+    opacity: 0;
+    appearance: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: rem-calc(20);
+    height: rem-calc(20);
+
+    &:checked + label::after {
+      content: '\e800';
+    }
+  }
+}
+

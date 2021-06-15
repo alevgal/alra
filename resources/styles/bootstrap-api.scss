@@ -8,15 +8,23 @@ $utilities: (
       normal: $font-weight-normal,
       medium: $font-weight-medium,
       bold: $font-weight-bold,
+      black: $font-weight-black,
       bolder: $font-weight-bolder
     )
   ),
   "opacity": (
     property: opacity,
     values: (
-      4: 0.4,
+      25: 0.25,
+      40: 0.4,
     )
-  )
+  ),
+  "font-size": (
+    rfs: false,
+    property: font-size,
+    class: fs,
+    values: $font-sizes
+  ),
 );
 //
 //$utilities: map-merge(

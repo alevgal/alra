@@ -11,7 +11,7 @@ $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
+$gray-500: #a0a7ad !default;
 $gray-600: #717b84 !default;
 $gray-700: #495057 !default;
 $gray-800: #434d57 !default;
@@ -83,6 +83,7 @@ $dark:          $gray-900 !default;
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
+  "light-grey": $gray-500,
   "light-blue":    $light-blue,
   "gun-metal":  $gun-metal,
   "battleship-grey":    $battleship-grey,
@@ -222,9 +223,9 @@ $enable-reduced-motion:       true !default;
 $enable-smooth-scroll:        true !default;
 $enable-grid-classes:         true !default;
 $enable-button-pointers:      true !default;
-$enable-rfs:                  true !default;
+$enable-rfs:                  false !default;
 $enable-validation-icons:     true !default;
-$enable-negative-margins:     false !default;
+$enable-negative-margins:     true !default;
 $enable-deprecation-messages: true !default;
 $enable-important-utilities:  true !default;
 
@@ -253,17 +254,23 @@ $spacers: (
   4: $spacer / 4,
   5: $spacer * 0.3125,
   10: $spacer * 0.625,
+  12: $spacer * 0.75,
   16: $spacer,
   20: $spacer * 1.25,
   25: $spacer * 1.5625,
   28: $spacer * 1.75,
-  32: $spacer *2,
+  32: $spacer * 2,
   40: $spacer * 2.5,
   48: $spacer * 3,
   56: $spacer * 3.5,
   64: $spacer * 4,
+  75: $spacer * 4.6875,
+  80: $spacer * 5,
   100: $spacer * 6.25,
+  128: $spacer * 8,
   160: $spacer * 10,
+  170: $spacer * 10.625,
+  180: $spacer * 11.25,
 ) !default;
 
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
@@ -445,6 +452,7 @@ $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
 $font-weight-medium:          500 !default;
 $font-weight-bold:            700 !default;
+$font-weight-black:           900 !default;
 $font-weight-bolder:          bolder !default;
 
 $font-weight-base:            $font-weight-normal !default;
@@ -595,17 +603,17 @@ $table-variants: (
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
 // scss-docs-start input-btn-variables
-$input-btn-padding-y:         .375rem !default;
-$input-btn-padding-x:         .75rem !default;
+$input-btn-padding-y:         .719rem !default;
+$input-btn-padding-x:         0 !default;
 $input-btn-font-family:       null !default;
 $input-btn-font-size:         $font-size-base !default;
 $input-btn-line-height:       $line-height-base !default;
 
-$input-btn-focus-width:         .25rem !default;
-$input-btn-focus-color-opacity: .25 !default;
+$input-btn-focus-width:         0 !default;
+$input-btn-focus-color-opacity: 0 !default;
 $input-btn-focus-color:         rgba($component-active-bg, $input-btn-focus-color-opacity) !default;
 $input-btn-focus-blur:          0 !default;
-$input-btn-focus-box-shadow:    0 0 $input-btn-focus-blur $input-btn-focus-width $input-btn-focus-color !default;
+$input-btn-focus-box-shadow:    none !default;
 
 $input-btn-padding-y-sm:      .25rem !default;
 $input-btn-padding-x-sm:      .5rem !default;
@@ -624,8 +632,8 @@ $input-btn-border-width:      $border-width !default;
 // For each of Bootstrap's buttons, define text, background, and border color.
 
 // scss-docs-start btn-variables
-$btn-padding-y:               $input-btn-padding-y !default;
-$btn-padding-x:               $input-btn-padding-x !default;
+$btn-padding-y:               .6rem !default;
+$btn-padding-x:               3.375rem !default;
 $btn-font-family:             $input-btn-font-family !default;
 $btn-font-size:               $input-btn-font-size !default;
 $btn-line-height:             $input-btn-line-height !default;
@@ -653,7 +661,7 @@ $btn-link-hover-color:        $link-hover-color !default;
 $btn-link-disabled-color:     $gray-600 !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius:           $border-radius !default;
+$btn-border-radius:           20px !default;
 $btn-border-radius-sm:        $border-radius-sm !default;
 $btn-border-radius-lg:        $border-radius-lg !default;
 
@@ -709,19 +717,19 @@ $input-disabled-bg:                     $gray-200 !default;
 $input-disabled-border-color:           null !default;
 
 $input-color:                           $body-color !default;
-$input-border-color:                    $gray-400 !default;
+$input-border-color:                    $battleship-grey !default;
 $input-border-width:                    $input-btn-border-width !default;
 $input-box-shadow:                      $box-shadow-inset !default;
 
-$input-border-radius:                   $border-radius !default;
-$input-border-radius-sm:                $border-radius-sm !default;
-$input-border-radius-lg:                $border-radius-lg !default;
+$input-border-radius:                   0 !default;
+$input-border-radius-sm:                0 !default;
+$input-border-radius-lg:                0 !default;
 
 $input-focus-bg:                        $input-bg !default;
 $input-focus-border-color:              tint-color($component-active-bg, 50%) !default;
 $input-focus-color:                     $input-color !default;
 $input-focus-width:                     $input-btn-focus-width !default;
-$input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
+$input-focus-box-shadow:                none !default;
 
 $input-placeholder-color:               $gray-600 !default;
 $input-plaintext-color:                 $body-color !default;
@@ -868,13 +876,13 @@ $form-file-button-hover-bg:       shade-color($form-file-button-bg, 5%) !default
 // scss-docs-end form-file-variables
 
 // scss-docs-start form-floating-variables
-$form-floating-height:            add(3.5rem, $input-height-border) !default;
+$form-floating-height:            add(2.94rem, $input-height-border) !default;
 $form-floating-padding-x:         $input-padding-x !default;
-$form-floating-padding-y:         1rem !default;
-$form-floating-input-padding-t:   1.625rem !default;
-$form-floating-input-padding-b:   .625rem !default;
-$form-floating-label-opacity:     .65 !default;
-$form-floating-label-transform:   scale(.85) translateY(-.5rem) translateX(.15rem) !default;
+$form-floating-padding-y:         0.719rem !default;
+$form-floating-input-padding-t:   0.94rem !default;
+$form-floating-input-padding-b:   .5rem !default;
+$form-floating-label-opacity:     .7 !default;
+$form-floating-label-transform:   scale(.75) translateY(-.8rem) !default;
 $form-floating-transition:        opacity .1s ease-in-out, transform .1s ease-in-out !default;
 // scss-docs-end form-floating-variables
 
@@ -1476,3 +1484,5 @@ $kbd-color:                         $white !default;
 $kbd-bg:                            $gray-900 !default;
 
 $pre-color:                         null !default;
+
+$header-height:                      132px !default;

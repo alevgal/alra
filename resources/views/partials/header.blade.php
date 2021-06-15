@@ -1,4 +1,4 @@
-<header class="banner position-relative text-white align-items-center px-16 py-48 pt-menu-switch-28 pb-menu-switch-64">
+<header class="{{ $class }}">
   <div class="container-xl d-flex flex-wrap justify-content-between">
     <a class="brand logo" href="{{ home_url('/') }}">
       <span class="sr-only">{{ $siteName }}</span>
@@ -10,7 +10,7 @@
         <span class="sr-only">Close Menu</span>
       </button>
       <header class="nav-primary__header d-menu-switch-none">
-        <a class="nav-primary__logo logo" href="{{ home_url('/') }}">
+        <a class="nav-primary__logo logo logo-dark" href="{{ home_url('/') }}">
           <span class="sr-only">{{ $siteName }}</span>
         </a>
       </header>

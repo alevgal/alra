@@ -26,6 +26,7 @@ class Post extends Composer
     {
         return [
             'title' => $this->title(),
+            'subTitle'  => $this->subTitle(),
         ];
     }
 
@@ -65,5 +66,20 @@ class Post extends Composer
         }
 
         return get_the_title();
+    }
+
+    public function subTitle()
+    {
+        if ($this->view->name() !== 'partials.page-header') {
+            return get_field('sub-title');
+        }
+
+        if( is_single() ) {
+            return get_field('sub-title');
+        } elseif (is_post_type_archive('agents')) {
+            return get_field('agents-sub-title', 'option');
+        }
+
+        return false;
     }
 }

@@ -1,0 +1,35 @@
+/* purgecss start ignore */
+
+.link-line {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: -7px;
+    height: 0;
+    background-color: var(--alra-light-blue);
+    opacity: 0;
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+    transform: translateY(-10px);
+  }
+}
+
+li:not(.login-button) {
+  &:hover,
+  &.active,
+  &.current-menu-item {
+    a > .link-line {
+      &::before {
+        display: block;
+        transform: none;
+        opacity: 1;
+        height: 3px;
+      }
+    }
+  }
+}
+
+/* purgecss end ignore */

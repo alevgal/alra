@@ -23,6 +23,11 @@ add_action('wp_enqueue_scripts', function () {
         wp_enqueue_script('comment-reply');
     }
 
+    wp_dequeue_style('select2');
+    wp_dequeue_style('wp-job-manager-job-listings');
+
+    wp_dequeue_style('wp-job-manager-applications-frontend');
+
     wp_enqueue_style('alra/app.css', asset('styles/app.css')->uri(), false, null);
 }, 100);
 
@@ -54,7 +59,7 @@ add_action('after_setup_theme', function () {
      */
     add_theme_support('soil', [
         'clean-up',
-        'nav-walker',
+        //'nav-walker',
         'nice-search',
         'relative-urls'
     ]);
@@ -67,6 +72,8 @@ add_action('after_setup_theme', function () {
         'primary_navigation' => __('Primary Navigation', 'alra'),
         'footer_navigation' => __('Footer Navigation', 'alra'),
         'signin_navigation' => __('Sign In Navigation', 'alra'),
+        'top_banner_navigation' => __('Тоp Banner Navigation', 'alra'),
+        'bottom_banner_navigation' => __('Bottom Banner Navigation', 'alra'),
     ]);
 
     /**
