@@ -5,7 +5,7 @@ namespace App\View\Composers;
 use Roots\Acorn\View\Composer;
 use function App\formatPhone;
 
-class Agents extends Composer
+class ContentPeople extends Composer
 {
     /**
      * List of views served by this composer.
@@ -13,7 +13,8 @@ class Agents extends Composer
      * @var array
      */
     protected static $views = [
-        "partials.content-agents"
+        "partials.content-people",
+        "partials.content-single-people"
     ];
 
     /**

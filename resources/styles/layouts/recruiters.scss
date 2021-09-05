@@ -1,0 +1,13 @@
+.recruiters-banner {
+  max-height: 100vh;
+}
+
+.recruiters-title {
+  position: relative;
+  z-index: 100;
+  font-size: rem-calc(44);
+
+  @include media-breakpoint-up(lg) {
+    font-size: rem-calc(56);
+  }
+}

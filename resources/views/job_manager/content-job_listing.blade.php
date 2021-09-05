@@ -14,6 +14,7 @@
 --}}
 
 @global($post)
+@set($expired, get_option( 'job_manager_hide_expired_content', 1 ) && 'expired' === $post->post_status)
 
 <div @php(job_listing_class()) data-longitude="{{ esc_attr( $post->geolocation_long ) }}" data-latitude="{{ esc_attr( $post->geolocation_lat ) }}">
 	<div class="job-box d-flex flex-row">
@@ -23,9 +24,11 @@
     <div class="job-box__content">
       <header class="job-box__header d-lg-flex flex-lg-row">
         <div class="job-box__header-left">
-          <a class="position d-block text-decoration-none text-gun-metal" href="@php(the_job_permalink())">
-            <h3 class="position__title mb-20 mb-md-10">@php(wpjm_the_job_title())</h3>
-          </a>
+          <h3 class="position__title mb-20 mb-md-10">
+            <a class="position d-block text-decoration-none text-gun-metal expand-btn" href="#job-content-{{ get_the_ID() }}" data-bs-toggle="collapse" data-bs-target="#job-content-{{ get_the_ID() }}" aria-expanded="false" aria-controls="job-content-{{ get_the_ID() }}">
+              @php(wpjm_the_job_title())
+            </a>
+          </h3>
           <div class="job-box__meta d-md-flex flex-wrap mb-28 mb-md-20">
 
             @action( 'job_listing_meta_start' )
@@ -57,9 +60,7 @@
           <x-job-apply-button class="mb-16">
             Apply Now
           </x-job-apply-button>
-          <button class="btn btn-white expand-btn fw-medium mb-16" type="button" data-bs-toggle="collapse" data-bs-target="#job-content-{{ get_the_ID() }}" data-text="See less" aria-expanded="false" aria-controls="job-content-{{ get_the_ID() }}">
-            Show more
-          </button>
+          <button class="btn btn-white expand-btn fw-medium mb-16" type="button" data-bs-toggle="collapse" data-bs-target="#job-content-{{ get_the_ID() }}" data-text="See less" aria-expanded="false" aria-controls="job-content-{{ get_the_ID() }}">See more</button>
         </div>
       </header>
 
@@ -92,33 +93,39 @@
       </div>
 
       <div id="job-content-{{ get_the_ID() }}" class="job-box__full collapse pt-32 pb-25 pt-md-0 pb-md-20">
-        @content
+        @if ( $expired )
+          <div class="job-manager-info">
+            {{ __( 'This listing has expired.', 'wp-job-manager' ) }}
+          </div>
+        @else
+          @content
+        @endif
       </div>
 
-      <div class="job-buttons flex-column flex-md-row mt-25 mb-48 mt-mb-20 mb-md-64">
-        <button class="btn btn-white expand-btn fw-medium mb-20 mb-md-0 order-md-1" type="button" data-bs-toggle="collapse" data-bs-target="#job-content-{{ get_the_ID() }}" data-text="See more" aria-expanded="false" aria-controls="job-content-{{ get_the_ID() }}">
-          Show less
-        </button>
-        <x-job-apply-button class="me-md-12 order-md-0">
+      <div class="job-buttons job-buttons-middle flex-column flex-sm-row mt-25">
+        <button class="btn btn-white expand-btn fw-medium mb-20 mb-sm-0 order-sm-1" type="button" data-bs-toggle="collapse" data-bs-target="#job-content-{{ get_the_ID() }}" data-text="See less" aria-expanded="false" aria-controls="job-content-{{ get_the_ID() }}">See more</button>
+        <x-job-apply-button class="me-sm-12 order-sm-0">
           Apply Now
         </x-job-apply-button>
       </div>
 
-      <div class="job-box__agents row">
+
+
+      <div class="job-box__agents mt-48 mt-mt-20 mt-lg-64 row">
         @if($agent)
           @set($post, $agent)
           @php(setup_postdata( $agent ))
-            @include('partials.content-agents', [
+            @include('partials.content-people', [
               'classes' => 'job-box__agent col-12 col-md-7 col-lg-6 d-flex flex-row pe-lg-48'
             ])
           @php(wp_reset_postdata())
 
-          <div class="agent-buttons col-12 col-md-5 col-lg-6 d-flex flex-column flex-lg-row justify-content-lg-between flex-wrap mb-28">
+          <div class="agent-buttons col-12 col-md-5 col-lg-6 d-flex flex-column flex-sm-row flex-md-column flex-lg-row justify-content-between flex-wrap">
             <button class="btn btn-white fw-medium mb-12 text-overflow" type="button">
               Ask {!! App\getFirstName( $agent->post_title ) !!} Question
             </button>
         @else
-              <div class="agent-buttons col-12 col-md-5 col-lg-6 d-flex flex-column flex-lg-row justify-content-lg-between flex-wrap ms-md-auto">
+              <div class="agent-buttons col-12 col-md-5 col-lg-6 d-flex flex-column flex-sm-row flex-md-column flex-lg-row justify-content-between flex-wrap ms-md-auto">
         @endif
 
                 <button class="btn btn-white fw-medium mb-12" type="button">
@@ -141,7 +148,7 @@
     </div>
 
   </div>
-    @if ( candidates_can_apply() )
+    @if ( candidates_can_apply() && ! $expired )
       @php( get_job_manager_template( 'job-application.php' ) )
     @endif
 </div>

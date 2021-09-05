@@ -3,23 +3,26 @@
 @font-face {
   font-family: 'alra';
   src:
-    url('../fonts/alra.eot?44487349');
+    url('../fonts/alra.eot?39530425');
   src:
-    url('../fonts/alra.eot?44487349#iefix') format('embedded-opentype'),
-    url('../fonts/alra.woff2?44487349') format('woff2'),
-    url('../fonts/alra.woff?44487349') format('woff'),
-    url('../fonts/alra.ttf?44487349') format('truetype'),
-    url('../fonts/alra.svg?44487349#alra') format('svg');
+    url('../fonts/alra.eot?39530425#iefix') format('embedded-opentype'),
+    url('../fonts/alra.woff2?39530425') format('woff2'),
+    url('../fonts/alra.woff?39530425') format('woff'),
+    url('../fonts/alra.ttf?39530425') format('truetype'),
+    url('../fonts/alra.svg?39530425#alra') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+
 /*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'alra';
-    src: url('../font/alra.svg?44487349#alra') format('svg');
+    src: url('../font/alra.svg?39530425#alra') format('svg');
   }
 }
 */
@@ -60,6 +63,7 @@
 }
 
 .icon-ok::before { content: '\e800'; } /* '' */
+.icon-down-open-big::before { content: '\e801'; } /* '' */
 .icon-facebook::before { content: '\e823'; } /* '' */
 .icon-twitter::before { content: '\e824'; } /* '' */
 .icon-envelope::before { content: '\e825'; } /* '' */
@@ -74,5 +78,7 @@
 .icon-quote::before { content: '\e82f'; } /* '' */
 .icon-arrow-left::before { content: '\e903'; } /* '' */
 .icon-arrow-right::before { content: '\e904'; } /* '' */
+.icon-left::before { content: '\f177'; } /* '' */
+.icon-right::before { content: '\f178'; } /* '' */
 
 /* purgecss end ignore */

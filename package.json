@@ -40,9 +40,15 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "dependencies": {
+    "animatewithsass": "^3.2.1",
     "bootstrap": "^5.0.0-beta3",
+    "chart.js": "^3.3.2",
+    "chartjs-plugin-datalabels": "^2.0.0-rc.1",
     "jquery": "^3.5.1",
+    "lozad": "^1.16.0",
+    "nouislider": "^15.2.0",
     "select2": "^4.1.0-rc.0",
-    "swiper": "^6.6.1"
+    "swiper": "^6.6.1",
+    "wnumb": "^1.2.0"
   }
 }

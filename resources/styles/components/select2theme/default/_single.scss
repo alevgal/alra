@@ -29,26 +29,30 @@
 
     position: absolute;
 
-    top: 1px;
+    top: 50%;
+    transform: translateY(-50%);
     right: 1px;
 
     width: 20px;
+    text-align: center;
 
     b {
-      border-color: #888 transparent transparent transparent;
-      border-style: solid;
-      border-width: 5px 4px 0 4px;
-
-      height: 0;
-      left: 50%;
-
-      margin-left: -4px;
-      margin-top: -2px;
-
-      position: absolute;
-
-      top: 50%;
-      width: 0;
+      &::before {
+        font-family: "alra";
+        font-style: normal;
+        font-weight: normal;
+        speak: never;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: '\e801'
+      }
     }
   }
 }

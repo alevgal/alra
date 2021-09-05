@@ -111,7 +111,61 @@ class Jobs extends Field
                 'label' => 'Special offer',
                 'media_upload' => 0,
                 'delay' => 1,
-            ]);
+            ])
+            ->addGroup('jobs_bottom_section', [
+                'label' => 'Bottom Section',
+                'instructions' => '',
+                'layout' => 'block',
+            ])
+            ->addTextarea('text_top',  [
+                'label' => 'Text top',
+                'new_lines' => 'br',
+            ])
+            ->addTextarea('text_bottom', [
+                'label' => 'Text bottom',
+                'new_lines' => 'br',
+            ])
+            ->addRepeater('buttons', [
+                'label' => 'Buttons',
+                'layout' => 'block',
+                'button_label' => 'Add Button',
+                'min' => 0,
+                'max' => 2,
+            ])
+            ->addText('text', [
+                'label' => 'Text',
+                'wrapper' => [
+                    'width' => '40%',
+                ],
+            ])
+            ->addText('link', [
+                'label' => 'Link',
+                'wrapper' => [
+                    'width' => '40%',
+                ],
+            ])
+            ->addSelect('style', [
+                'label' => 'Style',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => [],
+                'wrapper' => [
+                    'width' => '20%',
+                ],
+                'choices' => [
+                    'light-blue' => 'Blue',
+                    'transparent'   => 'Transparent'
+                ],
+                'default_value' => [],
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+                'ajax' => 0,
+                'return_format' => 'value',
+                'placeholder' => '',
+            ])
+            ->endRepeater()
+            ->endGroup();
 
         return $jobs->build();
     }

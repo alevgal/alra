@@ -46,6 +46,9 @@ mix
           /border-0/,
           /modal-backdrop/,
           /modal-open/,
+          /btn-light-blue/,
+          /btn-transparent/,
+          /text-break/,
         ],
         greedy: [
           /swiper-container$/,

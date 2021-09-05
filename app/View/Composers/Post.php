@@ -50,6 +50,11 @@ class Post extends Composer
         }
 
         if (is_archive()) {
+
+            if (is_post_type_archive('people')) {
+                return get_field('agents-title', 'option');
+            }
+
             return get_the_archive_title();
         }
 
@@ -76,7 +81,7 @@ class Post extends Composer
 
         if( is_single() ) {
             return get_field('sub-title');
-        } elseif (is_post_type_archive('agents')) {
+        } elseif (is_post_type_archive('people')) {
             return get_field('agents-sub-title', 'option');
         }
 

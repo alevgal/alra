@@ -14,6 +14,11 @@ use function Roots\asset;
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
+
+    if( is_page_template('template-sectors.blade.php') || is_tax('sector') ) {
+        wp_enqueue_script('select2');
+    }
+
     wp_enqueue_script('alra/vendor.js', asset('scripts/vendor.js')->uri(), ['jquery'], null, true);
     wp_enqueue_script('alra/app.js', asset('scripts/app.js')->uri(), ['alra/vendor.js'], null, true);
 

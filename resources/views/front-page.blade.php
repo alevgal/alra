@@ -11,7 +11,9 @@
         'Your Talent Search.',
         'Your Career Ambitions',
       ],
-      'title' => 'Amplified'
+      'title' => 'Amplified',
+      'listAnimation' => 'lightSpeedInLeft',
+      'titleAnimation'  => 'zoomIn'
     ])
 
     @include('partials.home-promo')
@@ -23,7 +25,7 @@
         'Brett is a diligent and professional operator and his knowledge in our sector has been important with regard to assisting us in identifying opportunities. His personal and flexible approach also means he has been a “preferred provider” over many years.',
         'Brett is a diligent and professional operator and his',
       ],
-      'title' => 'And people are noticing.'
+      'title' => 'People are noticing.'
     ])
 
     @include('partials.home-bottom')

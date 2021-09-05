@@ -50,7 +50,7 @@ class JobSettings extends Field
                     'class' => '',
                     'id' => '',
                 ],
-                'post_type' => ['agents'],
+                'post_type' => ['people'],
                 'taxonomy' => [],
                 'allow_null' => 0,
                 'multiple' => 0,

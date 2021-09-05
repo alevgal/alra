@@ -16,6 +16,12 @@
     width: 124px;
   }
 
+  @include media-breakpoint-up(lg) {
+    .sector__agent & {
+      width: 147px;
+    }
+  }
+
   @include media-breakpoint-up(xl) {
     width: 135px;
   }
@@ -31,6 +37,12 @@
   .job-box__agent & {
     width: calc(100% - 124px);
     padding-left: 25px !important;
+  }
+
+  @include media-breakpoint-up(lg) {
+    .sector__agent & {
+      width: calc(100% - 147px);
+    }
   }
 
   @include media-breakpoint-up(xl) {

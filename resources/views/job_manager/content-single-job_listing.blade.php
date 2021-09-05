@@ -91,7 +91,7 @@
           @if($agent)
             @set($post, $agent)
             @php(setup_postdata( $agent ))
-            @include('partials.content-agents', [
+            @include('partials.content-people', [
               'classes' => 'job-box__agent col-12 col-md-7 col-lg-6 d-flex flex-row pe-lg-48'
             ])
             @php(wp_reset_postdata())

@@ -1,6 +1,7 @@
 .content-info {
   padding-top: rem-calc(165);
   padding-bottom: rem-calc(100);
+  margin-top: -13px;
   position: relative;
   background: linear-gradient(to bottom, rgba(#394651, 0.6), rgba(#0b0e10, 0.6)),
               url('../images/bottom_banner.jpg') 50% 50% no-repeat;
@@ -24,10 +25,12 @@
     opacity: 0.5;
   }
 
+
   @include media-breakpoint-up(lg) {
     background-size: 100% 100%, cover;
     padding-top: rem-calc(242);
     padding-bottom: rem-calc(168);
+    margin-top: -43px;
   }
 }
 

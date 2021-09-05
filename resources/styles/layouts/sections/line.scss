@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 .section-line {
   &.with-map {
     background-size: auto 100%;
@@ -104,3 +106,54 @@
     }
   }
 }
+
+.section-line__item-animation {
+  &:not(.animated) {
+    opacity: 0;
+  }
+
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      @include delay(#{0.25 * $i}s);
+    }
+  }
+
+  &.animated {
+    @include duration(0.8s);
+    @include fill-mode(both);
+  }
+}
+
+.section-line__title-animation {
+  //&:not(.animation-end) {
+  //  opacity: 0;
+  //}
+  transform: scale(0.5);
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out, transform 0.6s ease-in-out;
+
+  &.loaded {
+    transform: none;
+    opacity: 1;
+  }
+
+  //&.zoomIn {
+  //  transform: scale(0.5);
+  //  opacity: 1 !important;
+  //  transition: opacity 0.1s ease-in-out, transform 0.6s ease-in-out;
+  //  transition-delay: 1s;
+  //
+  //  &.animated {
+  //    transform: none;
+  //    opacity: 1 !important;
+  //  }
+  //}
+
+  //@include delay(1s);
+  //
+  //&.animated {
+  //  @include duration(0.5s);
+  //}
+}
+
+/* purgecss end ignore */

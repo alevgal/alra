@@ -1,0 +1,145 @@
+@import "sector-single";
+
+.check-list {
+  ul {
+    @extend .list-unstyled;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      font-family: "alra";
+      font-style: normal;
+      font-weight: normal;
+      speak: never;
+      display: inline-block;
+      text-decoration: inherit;
+      text-align: center;
+      font-variant: normal;
+      text-transform: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 7px;
+      margin-right: 6px;
+      height: 11px;
+      width: 11px;
+      line-height: 11px;
+      border-radius: 50%;
+      color: $white;
+      background-color: $light-blue;
+      content: '\e800';
+    }
+  }
+}
+
+.sector-box {
+  padding-bottom: rem-calc(57);
+  margin-bottom: rem-calc(57);
+  border-bottom: 1px solid #dfdfdf;
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: rem-calc(34);
+    margin-bottom: rem-calc(34);
+  }
+}
+
+.sector-photo {
+  width: 72px;
+  height: 72px;
+
+  img {
+    filter: grayscale(100);
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    img {
+      filter: none;
+    }
+  }
+}
+
+.sector-info {
+  width: calc(100% - 72px);
+  padding-left: 16px;
+}
+
+.sector-title {
+  font-size: rem-calc(26);
+  margin-bottom: rem-calc(9);
+}
+
+.sector-contacts {
+  li {
+    margin: 0 rem-calc(15) rem-calc(12) 0;
+    padding-right: rem-calc(15);
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 1px;
+      height: 13px;
+      border-right: 1px solid;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:last-child {
+      margin-right: 0;
+      padding-bottom: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: calc(100% - 300px);
+    padding-right: 10px;
+  }
+}
+
+.sector-actions {
+
+  .sector-single & {
+    width: 100%;
+  }
+
+  @include media-breakpoint-down(md) {
+    .sector-box & {
+      margin-left: -88px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .btn {
+      width: calc(50% - 5px);
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 300px;
+    padding-left: 10px;
+
+    .sector-single & {
+      width: 300px;
+      margin-left: 0 !important;
+      padding-left: 0;
+    }
+  }
+}
+
+.sector-anchor {
+  top: -150px;
+}

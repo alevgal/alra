@@ -5,6 +5,7 @@
 @import "bootstrap-api";
 @import "~bootstrap/scss/bootstrap";
 @import "~swiper/swiper";
+@import "~animatewithsass/properties";
 
 @import 'common/global';
 @import 'common/fonts';
@@ -18,6 +19,10 @@
 @import "components/select2";
 @import "components/agents";
 @import "components/forms";
+@import "components/navigation";
+@import "components/accordion";
+@import "components/nouislider/nouislider";
+@import "components/animation";
 @import "layouts/header";
 @import "layouts/footer";
 @import "layouts/agents";
@@ -25,4 +30,8 @@
 @import "layouts/sections/sections";
 @import "layouts/contact";
 @import "layouts/job-manager";
+@import "layouts/sectors";
+@import "layouts/recruiters";
+@import "layouts/calculator";
+@import "layouts/coaching";
 @import "utils/utils";

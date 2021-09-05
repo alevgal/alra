@@ -26,10 +26,26 @@ add_filter('body_class', function (array $classes) {
         }
     }
 
+    if( is_page_template('template-sectors.blade.php') || is_tax('sector') ) {
+        $classes[] = 'with-sector-select';
+    }
+
+    if( is_page_template('template-recruiters.blade.php') ) {
+        $classes[] = 'with-calculator';
+    }
+
+    if( is_page_template('template-jobs.blade.php') ) {
+        $classes[] = 'job-list';
+    }
+
     /** Clean up class names for custom templates */
     $classes = array_map(function ($class) {
         return preg_replace(['/-blade(-php)?$/', '/^page-template-views/'], '', $class);
     }, $classes);
+
+    if( bodyPadding() ) {
+        $classes[] = 'body-padding';
+    }
 
     return array_filter($classes);
 });
@@ -48,3 +64,22 @@ add_filter( 'nav_menu_css_class', function ( $classes, $item, $args ){
 //Remove job manager style
 
 add_filter('job_manager_enqueue_frontend_style', '__return_false');
+
+add_filter('soil/relative-url-filters', function( $filters ) {
+    $term_filter_idx = array_search('term_link', $filters);
+
+    if( $term_filter_idx ) {
+        unset( $filters[$term_filter_idx] );
+    }
+
+    return $filters;
+});
+
+
+add_filter('job_manager_enhanced_select_enabled', function( $page ) {
+    if (is_page_template('template-sectors.blade.php') || is_tax('sector') ) {
+        $page = true;
+    }
+    return $page;
+});
+

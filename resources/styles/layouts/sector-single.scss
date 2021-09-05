@@ -1,0 +1,46 @@
+.sector-single-photo {
+  width: 110px;
+  height: 110px;
+
+  img {
+    filter: grayscale(100);
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    img {
+      filter: none;
+    }
+  }
+}
+
+.sector-single-title {
+  font-size: rem-calc(46);
+  line-height: 1.1;
+}
+
+
+.sector-single-header {
+  width: calc(100% - 110px);
+}
+
+.single-sector-list {
+  ul {
+    line-height: 1.75;
+  }
+}
+
+.single-sector-list-cols {
+  ul {
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      li  {
+        width: 50%;
+        flex: 0 0 50%;
+      }
+    }
+  }
+}

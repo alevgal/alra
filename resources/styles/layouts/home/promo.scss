@@ -5,36 +5,58 @@
 
 .home-promo__grid {
 
-  @include media-breakpoint-up(lg) {
-    display: grid;
-    grid-template-areas:
-      "promo-header promo-info"
-      "promo-bottom promo-info";
-  }
-
-  @include media-breakpoint-up(xl) {
-    grid-template-columns: 60% 40%;
-  }
+  //@include media-breakpoint-up(lg) {
+  //  display: grid;
+  //  grid-template-areas:
+  //    "promo-header"
+  //    "promo-info";
+  //}
+  //
+  //@include media-breakpoint-up(xl) {
+  //  grid-template-columns: 60% 40%;
+  //}
 }
 
-.home-promo__header {
-  grid-area: promo-header;
-}
+//.home-promo__header {
+//  grid-area: promo-header;
+//}
+//
+//.home-promo__info {
+//  grid-area: promo-info;
+//}
 
-.home-promo__info {
-  grid-area: promo-info;
-}
-
-.home-promo__info-header {
-  border-left: 4px solid var(--alra-light-blue);
+.home-promo__press {
+  opacity: 0.25;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  transform: scale(0.5);
 
   p {
     &:last-child {
       margin-bottom: 0;
     }
   }
-}
 
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    background-color: var(--alra-light-blue);
+    content: "";
+    height: 0;
+    transition: height 0.3s ease-in-out;
+  }
+
+  &.loaded {
+    opacity: 1;
+    transform: none;
+
+    &::before {
+      height: 100%;
+    }
+  }
+}
 
 .home-promo__info-title {
   font-size: rem-calc(38);

@@ -3,6 +3,7 @@
 namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
+use function App\bodyPadding;
 
 class Header extends Composer
 {
@@ -17,7 +18,7 @@ class Header extends Composer
 
     private $classes = [
       'banner',
-      'position-relative',
+      'position-fixed',
       'text-white',
       'align-items-center',
       'px-16',
@@ -42,14 +43,12 @@ class Header extends Composer
     {
       $classes = [];
 
-      if( ! in_array(true, [
-          is_front_page(),
-          is_page_template('template-jobs.blade.php')
-      ]) ) {
-          $classes[] ='banner-img';
+      if( bodyPadding() ) {
+       //   $classes[] ='banner-img';
           $classes[] ='beveled-bottom';
       }
 
       return array_merge( $this->classes, $classes);
+        //return $this->classes;
     }
 }

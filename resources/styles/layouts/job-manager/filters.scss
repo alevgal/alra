@@ -1,6 +1,5 @@
 /* purgecss start ignore */
 .job-filters {
-  margin-top: rem-calc(-$header-height);
   z-index: 1;
   padding-top: rem-calc(217);
   padding-bottom: rem-calc(150);
@@ -26,10 +25,15 @@
 .search_jobs {
   > .filter-group {
     @include media-breakpoint-up(lg) {
-      width: rem-calc(200);
-      flex-basis: rem-calc(200);
+      width: rem-calc(220);
+      flex-basis: rem-calc(220);
       padding-left: rem-calc(20);
       padding-right: rem-calc(20);
+
+      &.search_sectors {
+        width: rem-calc(300);
+        flex-basis: rem-calc(300);
+      }
     }
   }
 }

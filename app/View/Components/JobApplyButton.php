@@ -9,7 +9,7 @@ class JobApplyButton extends Component
 
     public $base_classes = [
         'btn',
-        'btn-dark',
+        'btn-light-blue',
         'fw-medium'
     ];
 
@@ -30,6 +30,11 @@ class JobApplyButton extends Component
      */
     public function render()
     {
+        global $post;
+
+        if( get_option( 'job_manager_hide_expired_content', 1 ) && 'expired' === $post->post_status ) {
+            return '';
+        }
         return candidates_can_apply() ? $this->view('components.job-apply-button') : '';
     }
 }

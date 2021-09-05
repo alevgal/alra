@@ -261,12 +261,15 @@ $spacers: (
   28: $spacer * 1.75,
   32: $spacer * 2,
   40: $spacer * 2.5,
+  44: $spacer * 2.75,
   48: $spacer * 3,
   56: $spacer * 3.5,
+  60: $spacer * 3.75,
   64: $spacer * 4,
   75: $spacer * 4.6875,
   80: $spacer * 5,
   100: $spacer * 6.25,
+  120: $spacer * 7.5,
   128: $spacer * 8,
   160: $spacer * 10,
   170: $spacer * 10.625,
@@ -850,21 +853,21 @@ $form-select-font-size-lg:        $input-font-size-lg !default;
 
 // scss-docs-start form-range-variables
 $form-range-track-width:          100% !default;
-$form-range-track-height:         .5rem !default;
+$form-range-track-height:         0.25rem !default;
 $form-range-track-cursor:         pointer !default;
-$form-range-track-bg:             $gray-300 !default;
-$form-range-track-border-radius:  1rem !default;
-$form-range-track-box-shadow:     $box-shadow-inset !default;
+$form-range-track-bg:             #e3e3e3 !default;
+$form-range-track-border-radius:  0 !default;
+$form-range-track-box-shadow:     none !default;
 
-$form-range-thumb-width:                   1rem !default;
-$form-range-thumb-height:                  $form-range-thumb-width !default;
-$form-range-thumb-bg:                      $component-active-bg !default;
+$form-range-thumb-width:                   1.125rem !default;
+$form-range-thumb-height:                  1.125rem !default;
+$form-range-thumb-bg:                      $light-blue !default;
 $form-range-thumb-border:                  0 !default;
-$form-range-thumb-border-radius:           1rem !default;
-$form-range-thumb-box-shadow:              0 .1rem .25rem rgba($black, .1) !default;
-$form-range-thumb-focus-box-shadow:        0 0 0 1px $body-bg, $input-focus-box-shadow !default;
-$form-range-thumb-focus-box-shadow-width:  $input-focus-width !default; // For focus box shadow issue in Edge
-$form-range-thumb-active-bg:               tint-color($component-active-bg, 70%) !default;
+$form-range-thumb-border-radius:           50% !default;
+$form-range-thumb-box-shadow:              none !default;
+$form-range-thumb-focus-box-shadow:        none !default;
+$form-range-thumb-focus-box-shadow-width:  0 !default; // For focus box shadow issue in Edge
+$form-range-thumb-active-bg:               $light-blue !default;
 $form-range-thumb-disabled-bg:             $gray-500 !default;
 $form-range-thumb-transition:              background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 // scss-docs-end form-range-variables

@@ -1,0 +1,21 @@
+.coaching-anchor {
+  position: absolute;
+  left: 0;
+  top: -50px;
+
+  @include media-breakpoint-up(lg) {
+    top: -110px;
+  }
+}
+
+//.page-template-template-coaching {
+//  .contact-content {
+//    > * {
+//      @include media-breakpoint-up(xl) {
+//        max-width: 80%;
+//        margin-left: auto;
+//        margin-right: auto;
+//      }
+//    }
+//  }
+//}

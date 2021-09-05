@@ -1,0 +1,90 @@
+/* purgecss start ignore */
+
+.pagination {
+  .sector-list & {
+    margin-bottom: 80px;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: rem-calc(124);
+      margin-bottom: rem-calc(40);
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .page-numbers {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 rem-calc(9.5);
+    font-weight: $font-weight-medium;
+    color: $gun-metal;
+  }
+
+  .current {
+    color: $light-blue;
+  }
+
+  .prev,
+  .next {
+    height: 30px;
+    border: 1px solid;
+    text-align: center;
+    line-height: 28px;
+    padding: 0;
+
+    @include media-breakpoint-down(md) {
+      width: 30px;
+      border-radius: 50%;
+
+      span {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      span {
+        font-size: rem-calc(13px);
+        display: inline-block;
+        margin-left: rem-calc(9);
+        line-height: 1;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      border-radius: 15px;
+      padding-left: rem-calc(15);
+      padding-right: rem-calc(15);
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .prev {
+    margin-right: 9px;
+
+    @include media-breakpoint-up(md) {
+      span {
+        margin-left: rem-calc(10);
+      }
+    }
+  }
+
+  .next {
+    margin-left: 9px;
+
+    @include media-breakpoint-up(md) {
+      span {
+        margin-right: rem-calc(10);
+      }
+    }
+  }
+}
+
+/* purgecss end ignore */

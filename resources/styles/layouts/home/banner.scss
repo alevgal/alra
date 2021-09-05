@@ -3,7 +3,9 @@
 .home-banner {
   height: rem-calc(836);
   z-index: 1;
-  margin-top: rem-calc(-$header-height);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @include media-breakpoint-up(lg) {
     height: rem-calc(764);
@@ -89,9 +91,9 @@
     display: inline-block;
     position: relative;
 
-    .home-bottom__nav & {
-      font-weight: 900;
-    }
+    //.home-bottom__nav & {
+    //  font-weight: 900;
+    //}
 
     @include media-breakpoint-up(xs2) {
       font-size: 18px;

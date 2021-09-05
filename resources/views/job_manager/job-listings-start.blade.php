@@ -25,7 +25,7 @@
      'title' => 'Your Job Search.'
    ])
 
-<div class="job_listings-wrap mx-auto px-28">
+<div id="job-listings-wrap" class="job_listings-wrap mx-auto px-28">
   <header class="page-header mb-56 mb-lg-64">
     <h2 class="text-gun-metal fs-2 mb-10">
       Recent new

@@ -7,18 +7,29 @@
 }
 
 .beveled-top {
-  clip-path: polygon(0% 0%, 100% 10px, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 3px, 100% 13px, 100% 100%, 0% 100%);
 
   @include media-breakpoint-up(menu-switch) {
-    clip-path: polygon(0% 0%, 100% 40px, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 3px, 100% 43px, 100% 100%, 0% 100%);
   }
 }
 
 .beveled-top-bottom {
-  clip-path: polygon(0% 0%, 100% 10px, 100% 100%, 0% calc(100% - 10px));
+  clip-path: polygon(0% 3px, 100% 13px, 100% 100%, 0% calc(100% - 10px));
 
   @include media-breakpoint-up(menu-switch) {
-    clip-path: polygon(0% 0%, 100% 40px, 100% 100%, 0% calc(100% - 40px));
+    clip-path: polygon(0% 3px, 100% 43px, 100% 100%, 0% calc(100% - 40px));
+  }
+}
+
+.beveled-bottom,
+.beveled-top-bottom {
+  + * {
+    margin-top: -14px;
+
+    @include media-breakpoint-up(menu-switch) {
+      margin-top: -44px;
+    }
   }
 }
 

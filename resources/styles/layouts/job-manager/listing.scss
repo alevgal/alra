@@ -21,6 +21,14 @@
   }
 }
 
+.job-box {
+  margin-bottom: rem-calc(30);
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: rem-calc(50);
+  }
+}
+
 
 .job_listings-wrap {
   max-width: 1020px;
@@ -158,26 +166,26 @@
 
   .job-box-expanded & {
     display: flex;
-
-    @include media-breakpoint-up(md) {
-      margin-bottom: rem-calc(30);
-    }
-
-    @include media-breakpoint-up(lg) {
-      margin-bottom: rem-calc(50);
-    }
   }
 }
 
 .job-box__agent {
   padding-bottom: rem-calc(30);
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 0;
+  }
 }
 
 .job-buttons {
-  display: none;
+  display: flex;
 
-  .job-box-expanded & {
-    display: flex;
+  @include media-breakpoint-up(lg) {
+    display: none;
+
+    .job-box-expanded & {
+      display: flex;
+    }
   }
 
   .btn {
@@ -188,6 +196,10 @@
 .agent-buttons {
   .btn {
     padding: rem-calc(4.5);
+
+    @include media-breakpoint-between(sm, md) {
+      width: calc(50% - 6px);
+    }
 
     @include media-breakpoint-up(lg) {
       width: calc(50% - 6px);

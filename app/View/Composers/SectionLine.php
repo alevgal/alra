@@ -22,7 +22,8 @@ class SectionLine extends Composer
         'pt-64',
         'pb-64',
         'pt-lg-180',
-        'pb-lg-170'
+        'pb-lg-170',
+        'mt-0',
     ];
 
     /**
@@ -40,7 +41,8 @@ class SectionLine extends Composer
     public function override() {
 
         return [
-          'content' => $this->content()
+          'content' => $this->content(),
+          'title'   => $this->title(),
         ];
     }
 
@@ -58,8 +60,6 @@ class SectionLine extends Composer
             $classes[] = 'list-reverse';
         }
 
-
-
         return array_merge($this->classes, $classes);
     }
 
@@ -73,6 +73,8 @@ class SectionLine extends Composer
                     $return .= '<div class="section-line__slider swiper-container mb-32 mb-lg-0"><div class="swiper-wrapper">';
                     break;
                 case 'list':
+                    $return .= '<ul class="section-line__list list-unstyled text-center text-lg-end mb-10 fw-medium">';
+                    break;
                 case 'list-reverse':
                 default:
                     $return .= '<ul class="section-line__list list-unstyled text-center mb-10 fw-medium">';
@@ -84,11 +86,19 @@ class SectionLine extends Composer
                         $return .= '<div class="swiper-slide"><p>' . esc_html( $item ) . '</p></div>';
                         break;
                     case 'list-reverse':
-                        $return .= '<li class="section-line__item-big">' . $item . '</li>';
+                        $return .= sprintf('<li%s%s>%s</li>',
+                            $this->data['listAnimation'] ? ' class="lozad section-line__item-animation section-line__item-big"' : ' class="section-line__item-big"',
+                            $this->data['listAnimation'] ? ' data-animation="' . $this->data['listAnimation'] . '"' : '',
+                            $item
+                        );
                         break;
                     case 'list':
                     default:
-                        $return .= '<li>' . $item . '</li>';
+                        $return .= sprintf('<li%s%s>%s</li>',
+                            $this->data['listAnimation'] ? ' class="lozad section-line__item-animation"' : '',
+                            $this->data['listAnimation'] ? ' data-animation="' . $this->data['listAnimation'] . '"' : '',
+                            $item
+                        );
                 }
             }
 
@@ -115,5 +125,28 @@ class SectionLine extends Composer
         }
 
         return $return;
+    }
+
+    public function title()
+    {
+        $title = $this->data['title'];
+
+        switch ($this->data['contentType']) {
+            case 'list-reverse':
+                $title = sprintf('<h2 class="section-line__title text-center text-lg-end mb-32%s">%s</h2>',
+                    $this->data['titleAnimation'] ? ' lozad section-line__title-animation' : '',
+                    //$this->data['titleAnimation'] ? ' data-animation="' . $this->data['titleAnimation'] . '"' : '',
+                    $title);
+                break;
+            case 'list':
+            case 'slider':
+            default:
+            $title = sprintf('<h2 class="section-line__title text-center text-lg-start m-0%s">%s</h2>',
+                $this->data['titleAnimation'] ? ' lozad section-line__title-animation' : '',
+                    //$this->data['titleAnimation'] ? ' data-animation="' . $this->data['titleAnimation'] . '"' : '',
+                $title);
+        }
+
+        return $title;
     }
 }

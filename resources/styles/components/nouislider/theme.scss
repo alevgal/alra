@@ -1,0 +1,49 @@
+/* purgecss start ignore */
+
+.noUi-target {
+  background-color: #e3e3e3;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
+.noUi-handle {
+  border: none;
+  border-radius: 50%;
+  background: $light-blue;
+  box-shadow: none;
+
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  .noUi-horizontal & {
+    width: 18px;
+    height: 18px;
+    right: -9px;
+    top: -7px;
+  }
+}
+
+.noUi-horizontal {
+  height: 4px;
+}
+
+.noUi-connects {
+  border-radius: 0;
+}
+
+.noUi-connect {
+  background: $light-blue;
+}
+
+.noUi-tooltip {
+  border: none;
+  padding: 0;
+  color: $battleship-grey;
+  font-weight: $font-weight-medium;
+  background: transparent;
+}
+
+/* purgecss start ignore */

@@ -1,0 +1,32 @@
+/* purgecss start ignore */
+
+.body-padding {
+  padding-top: $header-height;
+}
+
+img.lozad {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+blockquote {
+  padding: 5px 0 5px 25px;
+  border-left: 4px solid $light-blue;
+  margin: 0 0 32px;
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 50px;
+  }
+}
+
+/* purgecss end ignore */
